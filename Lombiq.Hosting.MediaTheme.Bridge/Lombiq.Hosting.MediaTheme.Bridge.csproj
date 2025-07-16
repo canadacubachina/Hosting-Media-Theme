@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <!--<TargetFramework>net8.0</TargetFramework>-->
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
   </PropertyGroup>
 
@@ -27,16 +27,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Deployment.Abstractions" Version="2.1.0" />
+    <!--<PackageReference Include="OrchardCore.Deployment.Abstractions" Version="2.1.0" />
     <PackageReference Include="OrchardCore.DisplayManagement.Abstractions" Version="2.1.0" />
     <PackageReference Include="OrchardCore.Recipes.Abstractions" Version="2.1.0" />
     <PackageReference Include="OrchardCore.ResourceManagement.Abstractions" Version="2.1.0" />
-    <PackageReference Include="OrchardCore.Media" Version="2.1.0" />
-    <PackageReference Include="OrchardCore.Module.Targets" Version="2.1.0" />
-    <PackageReference Include="Scrutor" Version="6.1.0" />
+    <PackageReference Include="OrchardCore.Media" Version="2.1.0" />-->
+    <PackageReference Include="OrchardCore.Module.Targets" />
+    <PackageReference Include="Scrutor" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(NuGetBuild)' != 'true'">
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helpful-Extensions\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
+    <ProjectReference Include="..\..\Helpful-Libraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj" />
+  </ItemGroup>
+  
+  <!--<ItemGroup Condition="'$(NuGetBuild)' != 'true'">
     <ProjectReference Include="..\..\..\Libraries\Lombiq.HelpfulLibraries\Lombiq.HelpfulLibraries.OrchardCore\Lombiq.HelpfulLibraries.OrchardCore.csproj" />
     <ProjectReference Include="..\..\..\Modules\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions\Lombiq.HelpfulExtensions.csproj" />
   </ItemGroup>
@@ -44,6 +49,6 @@
   <ItemGroup Condition="'$(NuGetBuild)' == 'true'">
     <PackageReference Include="Lombiq.HelpfulLibraries.OrchardCore" Version="12.2.1-alpha.9.olys-4" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="10.0.1-alpha.0.osoe-935" />
-  </ItemGroup>
+  </ItemGroup>-->
 
 </Project>
